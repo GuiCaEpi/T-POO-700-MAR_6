@@ -1,7 +1,0 @@
-_build
-deps
-priv
-.git
-.gitignore
-node_modules
-*.log
