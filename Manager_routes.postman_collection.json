@@ -1,0 +1,641 @@
+{
+	"info": {
+		"_postman_id": "5c8c1c81-0e08-4c79-8adb-aeb85f873e0c",
+		"name": "Manager_routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36834739"
+	},
+	"item": [
+		{
+			"name": "WorkingTimes",
+			"item": [
+				{
+					"name": "show_specific_user_workingtimes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJmWWp1c083a0ZOVURXWlprU2JSUjBkZkM5bjdZQm9ONHptVTU0MmlNaEdPMU5xemZ4TiIsImV4cCI6MTczMjM2NzQ1MiwiaWF0IjoxNzI5Nzc1NDUyLCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI5YThiNzFhOC05OGEzLTQ1NDgtODgxZS00YjQyZDBkYTNmN2EiLCJuYmYiOjE3Mjk3NzU0NTEsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTEiLCJ0eXAiOiJhY2Nlc3MifQ.Zq2LRlP258wKr5n1EnOLQpo6XflvtlnynvGJkdjEGTQWPl-JFOhe5zwzHyBJM-ZazRRtIBMPBBIe8ccyr35eYQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "fYjusO7kFNUDWZZkSbRR0dfC9n7YBoN4zmU542iMhGO1NqzfxN",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/workingtime/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"workingtime",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "42"
+								}
+							]
+						},
+						"description": "A manager can see all the working times of a user who is part of his team\n\nCond:\n\nthe user need to be in the team of the manager"
+					},
+					"response": []
+				},
+				{
+					"name": "show_specific_user_workingtime",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJUWlV4V01teUswamxQWkxuZ0Z1VnE0MmRxZ0dxTzRQVHpFS3V2ZXJ2aS1PMmRNeEFMOSIsImV4cCI6MTczMjIxMTg3NiwiaWF0IjoxNzI5NjE5ODc2LCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI3NjUyZTNmZC1iY2QxLTRhMDAtYWE3ZC01OWY3N2JmMjUzMGQiLCJuYmYiOjE3Mjk2MTk4NzUsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTY0OSIsInR5cCI6ImFjY2VzcyJ9.f4WwIXf3UfgoowUAUuuGndt-GgQ7LvU0V7QnD9iZoWUMDSLgKAn7DjEhgNmChl6GtCj3W1exWgukmze0LURCyQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "TZUxWMmyK0jlPZLngFuVq42dqgGqO4PTzEKuvervi-O2dMxAL9",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/workingtime/:user_id/:workingtime_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"workingtime",
+								":user_id",
+								":workingtime_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								},
+								{
+									"key": "workingtime_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "A manager can see a specific working time of a specific user of his team"
+					},
+					"response": []
+				},
+				{
+					"name": "create_specific_user_workingtime",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJUWlV4V01teUswamxQWkxuZ0Z1VnE0MmRxZ0dxTzRQVHpFS3V2ZXJ2aS1PMmRNeEFMOSIsImV4cCI6MTczMjIxMTg3NiwiaWF0IjoxNzI5NjE5ODc2LCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI3NjUyZTNmZC1iY2QxLTRhMDAtYWE3ZC01OWY3N2JmMjUzMGQiLCJuYmYiOjE3Mjk2MTk4NzUsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTY0OSIsInR5cCI6ImFjY2VzcyJ9.f4WwIXf3UfgoowUAUuuGndt-GgQ7LvU0V7QnD9iZoWUMDSLgKAn7DjEhgNmChl6GtCj3W1exWgukmze0LURCyQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "TZUxWMmyK0jlPZLngFuVq42dqgGqO4PTzEKuvervi-O2dMxAL9",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"working_time\" :\n        {\n            \"start_time\": \"2024-09-07T08:41:40Z\",\n            \"end_time\": \"2024-10-24T06:12:10Z\",\n            \"team_id\": 93\n    \n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/workingtime/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"workingtime",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "A manager can create a new working time for a user of his team\n\ncond:  \n\\- It's the manager of the team  \n\\- The user is in the team"
+					},
+					"response": []
+				},
+				{
+					"name": "update_specific_user_workingtime",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJUWlV4V01teUswamxQWkxuZ0Z1VnE0MmRxZ0dxTzRQVHpFS3V2ZXJ2aS1PMmRNeEFMOSIsImV4cCI6MTczMjIxMTg3NiwiaWF0IjoxNzI5NjE5ODc2LCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI3NjUyZTNmZC1iY2QxLTRhMDAtYWE3ZC01OWY3N2JmMjUzMGQiLCJuYmYiOjE3Mjk2MTk4NzUsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTY0OSIsInR5cCI6ImFjY2VzcyJ9.f4WwIXf3UfgoowUAUuuGndt-GgQ7LvU0V7QnD9iZoWUMDSLgKAn7DjEhgNmChl6GtCj3W1exWgukmze0LURCyQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "TZUxWMmyK0jlPZLngFuVq42dqgGqO4PTzEKuvervi-O2dMxAL9",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"working_time\" :\n        {\n            \"start_time\": \"2024-09-07T08:41:40Z\",\n            \"end_time\": \"2024-10-24T06:12:10Z\",\n            \"team_id\": 93\n    \n        }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/workingtime/:user_id/:workingtime_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"workingtime",
+								":user_id",
+								":workingtime_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								},
+								{
+									"key": "workingtime_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "A manager can update a working time for a user of his team\n\ncond:  \n\\- It's the manager of the team  \n\\- The user is in the team"
+					},
+					"response": []
+				},
+				{
+					"name": "delete_specific_user_workingtime",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJUWlV4V01teUswamxQWkxuZ0Z1VnE0MmRxZ0dxTzRQVHpFS3V2ZXJ2aS1PMmRNeEFMOSIsImV4cCI6MTczMjIxMTg3NiwiaWF0IjoxNzI5NjE5ODc2LCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI3NjUyZTNmZC1iY2QxLTRhMDAtYWE3ZC01OWY3N2JmMjUzMGQiLCJuYmYiOjE3Mjk2MTk4NzUsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTY0OSIsInR5cCI6ImFjY2VzcyJ9.f4WwIXf3UfgoowUAUuuGndt-GgQ7LvU0V7QnD9iZoWUMDSLgKAn7DjEhgNmChl6GtCj3W1exWgukmze0LURCyQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "TZUxWMmyK0jlPZLngFuVq42dqgGqO4PTzEKuvervi-O2dMxAL9",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/workingtime/:user_id/:workingtime_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"workingtime",
+								":user_id",
+								":workingtime_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								},
+								{
+									"key": "workingtime_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "A manager can delete the workintime of a specific user in his team\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clocks",
+			"item": [
+				{
+					"name": "show_specific_user_clocks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJmWWp1c083a0ZOVURXWlprU2JSUjBkZkM5bjdZQm9ONHptVTU0MmlNaEdPMU5xemZ4TiIsImV4cCI6MTczMjM2NzQ1MiwiaWF0IjoxNzI5Nzc1NDUyLCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI5YThiNzFhOC05OGEzLTQ1NDgtODgxZS00YjQyZDBkYTNmN2EiLCJuYmYiOjE3Mjk3NzU0NTEsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTEiLCJ0eXAiOiJhY2Nlc3MifQ.Zq2LRlP258wKr5n1EnOLQpo6XflvtlnynvGJkdjEGTQWPl-JFOhe5zwzHyBJM-ZazRRtIBMPBBIe8ccyr35eYQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "fYjusO7kFNUDWZZkSbRR0dfC9n7YBoN4zmU542iMhGO1NqzfxN",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/clocks/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"clocks",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "42"
+								}
+							]
+						},
+						"description": "A manager can delete a clock for a user of his team"
+					},
+					"response": []
+				},
+				{
+					"name": "show_specific_user_clock",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJmWWp1c083a0ZOVURXWlprU2JSUjBkZkM5bjdZQm9ONHptVTU0MmlNaEdPMU5xemZ4TiIsImV4cCI6MTczMjM2NzQ1MiwiaWF0IjoxNzI5Nzc1NDUyLCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI5YThiNzFhOC05OGEzLTQ1NDgtODgxZS00YjQyZDBkYTNmN2EiLCJuYmYiOjE3Mjk3NzU0NTEsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTEiLCJ0eXAiOiJhY2Nlc3MifQ.Zq2LRlP258wKr5n1EnOLQpo6XflvtlnynvGJkdjEGTQWPl-JFOhe5zwzHyBJM-ZazRRtIBMPBBIe8ccyr35eYQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "fYjusO7kFNUDWZZkSbRR0dfC9n7YBoN4zmU542iMhGO1NqzfxN",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/clocks/:user_id/:clock_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"clocks",
+								":user_id",
+								":clock_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "42"
+								},
+								{
+									"key": "clock_id",
+									"value": "375"
+								}
+							]
+						},
+						"description": "A manager can see the list of the clocks of a specific user in his team"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CorrectionRequests",
+			"item": [
+				{
+					"name": "show_all_correctionrequests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJmWWp1c083a0ZOVURXWlprU2JSUjBkZkM5bjdZQm9ONHptVTU0MmlNaEdPMU5xemZ4TiIsImV4cCI6MTczMjM2NzQ1MiwiaWF0IjoxNzI5Nzc1NDUyLCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI5YThiNzFhOC05OGEzLTQ1NDgtODgxZS00YjQyZDBkYTNmN2EiLCJuYmYiOjE3Mjk3NzU0NTEsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTEiLCJ0eXAiOiJhY2Nlc3MifQ.Zq2LRlP258wKr5n1EnOLQpo6XflvtlnynvGJkdjEGTQWPl-JFOhe5zwzHyBJM-ZazRRtIBMPBBIe8ccyr35eYQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "fYjusO7kFNUDWZZkSbRR0dfC9n7YBoN4zmU542iMhGO1NqzfxN",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/correctionrequests/:manager_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"correctionrequests",
+								":manager_id"
+							],
+							"variable": [
+								{
+									"key": "manager_id",
+									"value": "11"
+								}
+							]
+						},
+						"description": "A manager can access the list of the requests containing his id"
+					},
+					"response": []
+				},
+				{
+					"name": "show_specific_correctionrequest",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJmWWp1c083a0ZOVURXWlprU2JSUjBkZkM5bjdZQm9ONHptVTU0MmlNaEdPMU5xemZ4TiIsImV4cCI6MTczMjM2NzQ1MiwiaWF0IjoxNzI5Nzc1NDUyLCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI5YThiNzFhOC05OGEzLTQ1NDgtODgxZS00YjQyZDBkYTNmN2EiLCJuYmYiOjE3Mjk3NzU0NTEsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTEiLCJ0eXAiOiJhY2Nlc3MifQ.Zq2LRlP258wKr5n1EnOLQpo6XflvtlnynvGJkdjEGTQWPl-JFOhe5zwzHyBJM-ZazRRtIBMPBBIe8ccyr35eYQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "fYjusO7kFNUDWZZkSbRR0dfC9n7YBoN4zmU542iMhGO1NqzfxN",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/correctionrequests/:manager_id/:correctionrequest_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"correctionrequests",
+								":manager_id",
+								":correctionrequest_id"
+							],
+							"variable": [
+								{
+									"key": "manager_id",
+									"value": "11"
+								},
+								{
+									"key": "correctionrequest_id",
+									"value": "5"
+								}
+							]
+						},
+						"description": "A manager can see a specific request containing his id"
+					},
+					"response": []
+				},
+				{
+					"name": "update_specific_correctionrequest",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJmWWp1c083a0ZOVURXWlprU2JSUjBkZkM5bjdZQm9ONHptVTU0MmlNaEdPMU5xemZ4TiIsImV4cCI6MTczMjM2NzQ1MiwiaWF0IjoxNzI5Nzc1NDUyLCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI5YThiNzFhOC05OGEzLTQ1NDgtODgxZS00YjQyZDBkYTNmN2EiLCJuYmYiOjE3Mjk3NzU0NTEsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTEiLCJ0eXAiOiJhY2Nlc3MifQ.Zq2LRlP258wKr5n1EnOLQpo6XflvtlnynvGJkdjEGTQWPl-JFOhe5zwzHyBJM-ZazRRtIBMPBBIe8ccyr35eYQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "fYjusO7kFNUDWZZkSbRR0dfC9n7YBoN4zmU542iMhGO1NqzfxN",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"correction_request\": {\n        \"status\": \"pending\",\n        \"user_id\": 42,\n        \"manager_id\": 11,\n        \"clock_id\": 375\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/correctionrequests/:manager_id/:correctionrequest_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"correctionrequests",
+								":manager_id",
+								":correctionrequest_id"
+							],
+							"variable": [
+								{
+									"key": "manager_id",
+									"value": "11"
+								},
+								{
+									"key": "correctionrequest_id",
+									"value": "5"
+								}
+							]
+						},
+						"description": "A manager can update a request containing his id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "show_all_users_in_team",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJmWWp1c083a0ZOVURXWlprU2JSUjBkZkM5bjdZQm9ONHptVTU0MmlNaEdPMU5xemZ4TiIsImV4cCI6MTczMjM2NzQ1MiwiaWF0IjoxNzI5Nzc1NDUyLCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI5YThiNzFhOC05OGEzLTQ1NDgtODgxZS00YjQyZDBkYTNmN2EiLCJuYmYiOjE3Mjk3NzU0NTEsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTEiLCJ0eXAiOiJhY2Nlc3MifQ.Zq2LRlP258wKr5n1EnOLQpo6XflvtlnynvGJkdjEGTQWPl-JFOhe5zwzHyBJM-ZazRRtIBMPBBIe8ccyr35eYQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "fYjusO7kFNUDWZZkSbRR0dfC9n7YBoN4zmU542iMhGO1NqzfxN",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/team/:team_id/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"team",
+								":team_id",
+								"users"
+							],
+							"variable": [
+								{
+									"key": "team_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show_manager_team",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJmWWp1c083a0ZOVURXWlprU2JSUjBkZkM5bjdZQm9ONHptVTU0MmlNaEdPMU5xemZ4TiIsImV4cCI6MTczMjM2NzQ1MiwiaWF0IjoxNzI5Nzc1NDUyLCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI5YThiNzFhOC05OGEzLTQ1NDgtODgxZS00YjQyZDBkYTNmN2EiLCJuYmYiOjE3Mjk3NzU0NTEsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMTEiLCJ0eXAiOiJhY2Nlc3MifQ.Zq2LRlP258wKr5n1EnOLQpo6XflvtlnynvGJkdjEGTQWPl-JFOhe5zwzHyBJM-ZazRRtIBMPBBIe8ccyr35eYQ",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "fYjusO7kFNUDWZZkSbRR0dfC9n7YBoN4zmU542iMhGO1NqzfxN",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/manager/team/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"manager",
+								"team",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "http://localhost:4000/api/sign_in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"augustine_kautzer@rath.name\",\n    \"password\" : \"hashed_password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/sign_in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/api/sign_out",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJpcC1GTW5WLWVha2Y3emVWYUNLNm1jNm1UUnFBSC1ROWdmbVpTa3ZUYmpmclNscHBJTiIsImV4cCI6MTczMjI2Nzc5MywiaWF0IjoxNzI5Njc1NzkzLCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiJmYzVhNWE4Ny03ZjczLTRjOWUtYmM2MS00OTY1YTliYThiMGYiLCJuYmYiOjE3Mjk2NzU3OTIsInByaXZpbGVnZV9sZXZlbCI6MSwic3ViIjoiMjMxNSIsInR5cCI6ImFjY2VzcyJ9.Xqc93d-rgM2CpMgRouJ77xRXrSog-RB9r1tGj50ptN7EPDpxFxtAaN8yak6A3a2XYTj4Gcq7-ct22bVmTnn7hA",
+						"type": "text"
+					},
+					{
+						"key": "x-csrf-token",
+						"value": "ip-FMnV-eakf7zeVaCK6mc6mTRqAH-Q9gfmZSkvTbjfrSlppIN",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"working_time\" : {\n        \"start_time\": \"2024-10-08T18:05:25Z\"\n    }\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/sign_out",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"sign_out"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

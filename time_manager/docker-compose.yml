@@ -1,0 +1,60 @@
+
+version: '3.8'  # Make sure you include a version
+
+services:
+  db:  # Service pour la base de données PostgreSQL
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"  # Expose le port PostgreSQL
+    volumes:
+      - db_data:/var/lib/postgresql/data  # Volume pour persister les données de PostgreSQL
+
+
+  web:  # Service pour l'application backend (Phoenix)
+    build: .  # Utilise le Dockerfile du répertoire courant pour construire l'image
+    command: mix phx.server
+    volumes:
+      - .:/app  # Monte le répertoire local de l'application dans le conteneur
+    ports:
+      - "${PHOENIX_PORT}:${PHOENIX_PORT}"  # Expose le port Phoenix
+    depends_on:
+      - db  # Assure que le service "db" soit démarré avant ce service
+    environment:
+      DATABASE_URL: ${DATABASE_URL}  # Connexion à la base de données PostgreSQL
+
+
+  frontend:  # Service pour l'application frontend (Vite.js, par exemple)
+    build:
+      context: ${FRONTEND_CONTEXT}  # Utilise le contexte de build défini dans l'environnement
+      dockerfile: ${FRONTEND_DOCKERFILE}  # Spécifie le Dockerfile à utiliser pour construire l'image frontend
+    ports:
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"  # Redirige le port Vite vers l'hôte
+    depends_on:
+      - web  # Assure que le service backend "web" soit démarré avant ce service
+    volumes:
+      - ${FRONTEND_CONTEXT}:/app  # Monte le répertoire local du frontend pour permettre le hot-reload
+      - /app/node_modules  # Exclut le répertoire node_modules pour éviter les conflits de dépendances
+    environment:
+      CHOKIDAR_USEPOLLING: ${CHOKIDAR_USEPOLLING}  # Active l'utilisation du polling pour Chokidar
+    command: npm run dev -- --host 0.0.0.0  # Commande pour démarrer le serveur de développement Vite
+    restart: unless-stopped
+
+  pgadmin:  # Service pour l'interface de gestion de base de données PgAdmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}  # Email pour PgAdmin
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}  # Mot de passe pour PgAdmin
+    ports:
+      - "${PGADMIN_PORT}:80"  # Expose l'interface web de PgAdmin
+    depends_on:
+      - db  # Assure que le service "db" soit démarré avant ce service
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin  # Persiste les données de configuration PgAdmin dans un volume
+
+volumes:
+  db_data:  # Correctly defined named volume for the PostgreSQL database
+  pgadmin_data:  # Correctly defined named volume for PgAdmin configuration

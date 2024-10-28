@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "822af488-e234-4e1c-aacf-965c26e3ecb8",
+		"name": "User_routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36834739"
+	},
+	"item": [
+		{
+			"name": "WorkingTimes",
+			"item": [
+				{
+					"name": "WorkingTimeForUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJpX2VIaXZUaGszbHRVS3VWbnA3VkZIT2Z0VDgzM2NQbHVuRG1IRTMzXzF3Rlk4akY4TyIsImV4cCI6MTczMjQzNTQ5NSwiaWF0IjoxNzI5ODQzNDk1LCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiJjNTM3NDAzZi1lNjIxLTQ0ZGEtODQ3MC1kMGQ1OGE5NGNhMzgiLCJuYmYiOjE3Mjk4NDM0OTQsInByaXZpbGVnZV9sZXZlbCI6MCwic3ViIjoiNDEiLCJ0eXAiOiJhY2Nlc3MifQ.alBJbRSN5zI7zxSnNmuZ1Mx5IJyDYwx66RofPCWK31081MvR2lal8ET7ipJPxYyn7DUUjxpngU6bSjoHdnQDuA",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "i_eHivThk3ltUKuVnp7VFHOftT833cPlunDmHE33_1wFY8jF8O",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/user/workingtime/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"user",
+								"workingtime",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "A manager can see all the working times of a user who is part of his team"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manager",
+			"item": [
+				{
+					"name": "GetManagersOfTheSpecificUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJpX2VIaXZUaGszbHRVS3VWbnA3VkZIT2Z0VDgzM2NQbHVuRG1IRTMzXzF3Rlk4akY4TyIsImV4cCI6MTczMjQzNTQ5NSwiaWF0IjoxNzI5ODQzNDk1LCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiJjNTM3NDAzZi1lNjIxLTQ0ZGEtODQ3MC1kMGQ1OGE5NGNhMzgiLCJuYmYiOjE3Mjk4NDM0OTQsInByaXZpbGVnZV9sZXZlbCI6MCwic3ViIjoiNDEiLCJ0eXAiOiJhY2Nlc3MifQ.alBJbRSN5zI7zxSnNmuZ1Mx5IJyDYwx66RofPCWK31081MvR2lal8ET7ipJPxYyn7DUUjxpngU6bSjoHdnQDuA",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "i_eHivThk3ltUKuVnp7VFHOftT833cPlunDmHE33_1wFY8jF8O",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/user/managers/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"user",
+								"managers",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "A manager can see all the working times of a user who is part of his team"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "GetTeamsOfTheSpecificUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJpX2VIaXZUaGszbHRVS3VWbnA3VkZIT2Z0VDgzM2NQbHVuRG1IRTMzXzF3Rlk4akY4TyIsImV4cCI6MTczMjQzNTQ5NSwiaWF0IjoxNzI5ODQzNDk1LCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiJjNTM3NDAzZi1lNjIxLTQ0ZGEtODQ3MC1kMGQ1OGE5NGNhMzgiLCJuYmYiOjE3Mjk4NDM0OTQsInByaXZpbGVnZV9sZXZlbCI6MCwic3ViIjoiNDEiLCJ0eXAiOiJhY2Nlc3MifQ.alBJbRSN5zI7zxSnNmuZ1Mx5IJyDYwx66RofPCWK31081MvR2lal8ET7ipJPxYyn7DUUjxpngU6bSjoHdnQDuA",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "i_eHivThk3ltUKuVnp7VFHOftT833cPlunDmHE33_1wFY8jF8O",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/protected/user/teams/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"user",
+								"teams",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "A manager can see all the working times of a user who is part of his team"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "clock",
+			"item": [
+				{
+					"name": "Create_specific_user_clock",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ0aW1lX21hbmFnZXIiLCJjLXhzcmYtdG9rZW4iOiJocGJ0MWhNemU1RlBRNW5wM0FYNkEzMW5tcU9jU2k3OEw5WUh4RkRNN3NjQ0ZXMjJLMSIsImV4cCI6MTczMjI3NzU5MiwiaWF0IjoxNzI5Njg1NTkyLCJpc3MiOiJ0aW1lX21hbmFnZXIiLCJqdGkiOiI3ODVlMTY4OC1lZTg3LTQ2NGQtOWM0Zi04ODFkZmIxOWUyMDkiLCJuYmYiOjE3Mjk2ODU1OTEsInByaXZpbGVnZV9sZXZlbCI6MCwic3ViIjoiMzg5IiwidHlwIjoiYWNjZXNzIn0.614gAPskhlUWhfV19fU6A_F9NopZCnuS9hofzUi3Dz-zHuSwYhrvNPJlh8fq2f-XMdKtEbOSX9pSiuPpDJFZvg",
+								"type": "text"
+							},
+							{
+								"key": "x-csrf-token",
+								"value": "hpbt1hMze5FPQ5np3AX6A31nmqOcSi78L9YHxFDM7scCFW22K1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clock\" :\r\n        {\r\n            \"status\": true,\r\n            \"time\": \"2024-10-07T08:41:40Z\",\r\n            \"team_id\": 36\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/protected/user/clocks/389",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"protected",
+								"user",
+								"clocks",
+								"389"
+							]
+						},
+						"description": "A manager can see all the working times of a user who is part of his team"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sign_in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"angelina_johns@hilll.com\",\r\n    \"password\": \"hashed_password\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/sign_in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
